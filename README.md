@@ -40,12 +40,11 @@ o	Mở file artifacts/contracts/Certificate.sol/Certificate.json, tìm đến kh
 Phần 5: Cấu hình Dự án
 
 Đây là bước quan trọng để kết nối các thành phần lại với nhau.
-1.	Cập nhật các file JavaScript: Mở các file sau: addsite.js, dashboard.js, login.js, search.js.
-o	Tìm đến 2 dòng đầu tiên và dán Địa chỉ hợp đồng MỚI và ABI MỚI mà bạn vừa lấy được ở Phần 4.
-2.	const contractAddress = "DÁN_ĐỊA_CHỈ_MỚI_VÀO_ĐÂY";
-3.	const contractABI = [ /* DÁN_NỘI_DUNG_ABI_MỚI_VÀO_ĐÂY */ ];
+Tìm đến 2 dòng đầu tiên và dán Địa chỉ hợp đồng MỚI và ABI MỚI mà bạn vừa lấy được ở Phần 4 vào file config.json
+	const contractAddress = "DÁN_ĐỊA_CHỈ_MỚI_VÀO_ĐÂY";
+	const contractABI = [ /* DÁN_NỘI_DUNG_ABI_MỚI_VÀO_ĐÂY */ ];
 
-4.	Cập nhật file server.js:
+.	Cập nhật file server.js:
 o	Mở file server.js.
 o	Tìm đến đối tượng dbConfig và đảm bảo user và password khớp với thiết lập MySQL trên máy tính mới.
 Phần 6: Chạy Dự án
