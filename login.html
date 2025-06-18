@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - CertiChain</title>
+    
+    <!-- Liên kết đến file CSS cục bộ -->
+    <link href="./dist/output.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Phần Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">CertiChain</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600">Trang chủ</a>
+                <a href="search.html" class="text-gray-600 hover:text-blue-600">Tra cứu Văn bằng</a>
+                <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Đăng nhập</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Phần Main Content -->
+    <main class="flex items-center justify-center min-h-screen" style="padding-top: -4rem; background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80'); background-size: cover; background-position: center;">
+        <div class="w-full max-w-md p-8 space-y-6 bg-white bg-opacity-95 backdrop-blur-sm rounded-xl shadow-lg m-4">
+            
+            <div class="text-center">
+                <h2 class="mt-4 text-3xl font-bold text-gray-900">Đăng nhập hệ thống</h2>
+            </div>
+            
+            <!-- Hộp lựa chọn vai trò -->
+            <div>
+                <label for="loginRole" class="block text-sm font-medium text-gray-700">Bạn là:</label>
+                <select id="loginRole" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="university">Trường Đại học</option>
+                    <option value="admin">Quản trị viên</option>
+                </select>
+            </div>
+
+            <!-- Nút đăng nhập sẽ thay đổi dựa trên vai trò -->
+            <div id="login-action-container">
+                 <!-- Form Đăng nhập của Trường (mặc định) -->
+                <div id="university-login-form">
+                    <p class="text-center text-sm text-gray-600 mb-4">Kết nối với ví điện tử đã được đăng ký để truy cập Bảng điều khiển.</p>
+                    <button id="universityLoginButton" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        Kết nối ví với vai trò Trường Đại học
+                    </button>
+                </div>
+
+                <!-- Form Đăng nhập của Admin (ẩn mặc định) -->
+                <div id="admin-login-form" class="hidden">
+                    <p class="text-center text-sm text-gray-600 mb-4">Kết nối với ví của người triển khai hợp đồng để truy cập trang Quản trị.</p>
+                    <button id="adminLoginButton" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900">
+                        Kết nối ví với vai trò Admin
+                    </button>
+                </div>
+            </div>
+            
+            <p id="loginStatus" class="text-center text-sm text-red-600 h-4"></p>
+
+        </div>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.8.0/ethers.umd.min.js" type="application/javascript"></script>
+    <script src="js/login.js" defer></script>
+</body>
+</html>

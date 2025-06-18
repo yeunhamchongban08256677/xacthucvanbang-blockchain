@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu Văn bằng - CertiChain</title>
+    
+    <!-- Liên kết đến file CSS cục bộ -->
+    <link href="./dist/output.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Phần Header (Thanh điều hướng) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">CertiChain</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600">Trang chủ</a>
+                <a href="search.html" class="text-blue-600 font-semibold">Tra cứu Văn bằng</a>
+                <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Đăng nhập</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Phần Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Tra cứu Văn bằng</h1>
+                <p class="mt-3 text-gray-600">Nhập thông tin để xác thực văn bằng trực tiếp trên nền tảng Blockchain.</p>
+            </div>
+
+            <!-- Khung Tra cứu -->
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <form id="searchForm" class="space-y-6">
+                    <div>
+                        <label for="universitySelect" class="block text-sm font-medium text-gray-700 mb-1">Chọn trường đại học</label>
+                        <select id="universitySelect" name="university" class="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">-- Đang tải danh sách trường --</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="tokenId" class="block text-sm font-medium text-gray-700 mb-1">Mã số văn bằng</label>
+                        <input type="text" id="tokenId" name="tokenId" placeholder="Nhập ID được cấp trên văn bằng" class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700">
+                            Tra cứu
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Khu vực hiển thị kết quả -->
+            <div id="result-container" class="mt-10">
+                <div id="loading-state" class="hidden text-center"><p class="text-gray-600">Đang tìm kiếm trên Blockchain...</p></div>
+                
+                <div id="success-state" class="hidden bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                    <div class="flex"><div class="flex-shrink-0"><svg class="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><div class="ml-4"><h3 class="text-lg font-bold text-green-800">Văn bằng Hợp lệ</h3><div id="certificate-details" class="mt-2 text-sm text-green-700 space-y-1"></div></div></div>
+                </div>
+
+                <div id="revoked-state" class="hidden bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+                     <div class="flex"><div class="flex-shrink-0"><svg class="h-6 w-6 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div><div class="ml-4"><h3 class="text-lg font-bold text-yellow-800">Văn bằng Đã bị Thu hồi</h3><p id="revoked-message" class="mt-2 text-sm text-yellow-700"></p></div></div>
+                </div>
+
+                 <div id="error-state" class="hidden bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                     <div class="flex"><div class="flex-shrink-0"><svg class="h-6 w-6 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><div class="ml-4"><h3 class="text-lg font-bold text-red-800">Lỗi Tra cứu</h3><p id="error-message" class="mt-2 text-sm text-red-700"></p></div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+            <p>&copy; 2024 CertiChain. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ĐÃ CẬP NHẬT: Liên kết đến file search.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.8.0/ethers.umd.min.js" type="application/javascript"></script>
+    <script src="js/search.js" defer></script>
+
+</body>
+</html>

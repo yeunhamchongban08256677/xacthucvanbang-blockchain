@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CertiChain - Hệ thống Xác thực Văn bằng Blockchain</title>
+    <!-- Tải Tailwind CSS -->
+    <link href="./dist/output.css" rel="stylesheet">
+    <!-- Tải Font Google (Inter) -->
+     
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Phần Header (Thanh điều hướng) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">
+                CertiChain
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Trang chủ</a>
+                <a href="search.html" class="text-gray-600 hover:text-blue-600 transition duration-300">Tra cứu Văn bằng</a>
+                <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Đăng nhập
+                </a>
+            </div>
+            <!-- Nút menu cho mobile -->
+            <button class="md:hidden text-gray-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Phần Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white">
+            <div class="container mx-auto px-6 py-24 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 leading-tight">
+                    Xác thực Văn bằng <span class="text-blue-600">Minh bạch</span> và <span class="text-blue-600">An toàn</span>
+                </h1>
+                <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Nền tảng ứng dụng công nghệ Blockchain để cấp phát, quản lý và xác thực văn bằng, chứng chỉ một cách đáng tin cậy, chống lại mọi hình thức gian lận.
+                </p>
+                <div class="mt-8">
+                    <a href="search.html" class="bg-blue-600 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300">
+                        Bắt đầu Tra cứu
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold">Tại sao nên chọn CertiChain?</h2>
+                    <p class="text-gray-600 mt-2">Những lợi ích vượt trội mà công nghệ Blockchain mang lại.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature 1: Minh bạch -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mx-auto mb-4">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Minh bạch Tuyệt đối</h3>
+                        <p class="text-gray-600">Mọi thông tin văn bằng sau khi được cấp sẽ công khai và có thể được xác thực bởi bất kỳ ai, bất kỳ lúc nào.</p>
+                    </div>
+                    <!-- Feature 2: Bất biến -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mx-auto mb-4">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Chống Giả mạo</h3>
+                        <p class="text-gray-600">Dữ liệu trên Blockchain không thể bị thay đổi hay xóa bỏ, đảm bảo tính toàn vẹn vĩnh viễn cho văn bằng.</p>
+                    </div>
+                    <!-- Feature 3: Dễ dàng -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mx-auto mb-4">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Xác thực Nhanh chóng</h3>
+                        <p class="text-gray-600">Quy trình xác minh chỉ mất vài giây, loại bỏ các thủ tục hành chính rườm rà và tiết kiệm thời gian.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600">
+            <p>&copy; 2025 CertiChain. All Rights Reserved.</p>
+            <p class="mt-2">Một sản phẩm đồ án ứng dụng công nghệ Blockchain.</p>
+                <a class="mt-2">Tác giả: Vũ Văn Chiến/ TH27.49 </a>
+        </div>
+    </footer>
+
+</body>
+</html>

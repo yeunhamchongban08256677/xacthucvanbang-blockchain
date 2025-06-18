@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang Quản trị - Cấp bằng</title>
+    <style>body{font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px;} input, button {width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;} button {cursor: pointer; background-color: #007bff; color: white; border: none;} button.revoke-btn {background-color: #dc3545;} .section {margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;}</style>
+</head>
+<body>
+    <h1>Quản trị Văn bằng sử dụng công nghệ Blockchain</h1>
+    <button id="connectButton">Kết nối Ví MetaMask</button>
+    <p id="walletAddress"></p>
+
+    <div id="adminPanel" style="display:none;">
+        <div class="section">
+            <h3>Cấp phát văn bằng mới</h3>
+            <input type="text" id="studentAddress" placeholder="Địa chỉ ví của sinh viên (0x...)" />
+            <input type="text" id="studentName" placeholder="Tên sinh viên" />
+            <input type="text" id="major" placeholder="Ngành học" />
+            <input type="text" id="classification" placeholder="Xếp loại tốt nghiệp" />
+            <button id="issueButton">Cấp bằng</button>
+            <p id="issueStatus"></p>
+        </div>
+
+        <!-- THÊM MỚI: Form để thu hồi văn bằng -->
+        <div class="section">
+            <h3>Thu hồi văn bằng</h3>
+            <input type="text" id="revokeTokenId" placeholder="Nhập ID văn bằng cần thu hồi" />
+            <button id="revokeButton" class="revoke-btn">Thu hồi Văn bằng</button>
+            <p id="revokeStatus"></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.8.0/ethers.umd.min.js" type="application/javascript"></script>
+    <script src="js/app (admin).js"></script>
+</body>
+</html>
